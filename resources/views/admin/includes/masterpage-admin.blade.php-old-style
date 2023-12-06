@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="">
+    <meta name="title" content="">
+	<link rel="icon" type="image/png" href="{{url('/')}}/public/uploads/admin/{{ Auth::user()->photo}}"/>
+    <title>Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="{{ URL::asset('public/assets/admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('public/assets/admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('public/assets/admin/css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{ URL::asset('public/assets/admin/css/custom.css')}}" rel="stylesheet">
+    <link href="{{ URL::asset('public/assets/admin/css/parsley.css')}}" rel="stylesheet">
+    <link href="{{ URL::asset('public/assets/admin/css/sweetalert2.min.css')}}" rel="stylesheet"> 
+    <link href="{{ URL::asset('public/assets/admin/css/bootstrap-tagsinput.css')}}" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+ <div class="loader" style="display:none;"><img src="{{url('/public/uploads/loading.gif')}}" height="100px" width="100px"></div>
+	  
+	  
+<div id="wrapper">
+	
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{!! url('admin/dashboard') !!}">
+                <div class="sidebar-brand-icon">
+					<i class="fas fa-user"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3"> </div>
+            </a>
+
+           
+			<!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item  {{ (request()->is('admin/dashboard')) ? 'active' : '' }}">
+                <a class="nav-link" href="{!! url('admin/dashboard') !!}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+			
+			
+		  <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseResources"
+                    aria-expanded="true" aria-controls="collapseResources">
+                    <i class="fas fa-fw fa-layer-group"></i>
+                    <span>Resources</span>
+                </a>
+                <div id="collapseResources" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded"> 
+                        <a class="collapse-item" href="{!! url('admin/category') !!}"> Categories</a>
+                        <a class="collapse-item" href="{!! url('admin/biome') !!}">Biome's List</a>
+                        <a class="collapse-item" href="{!! url('admin/tag') !!}">Tags</a> 
+                        <a class="collapse-item" href="{!! url('admin/post') !!}">Resources Post</a>
+                    </div>
+                </div>
+            </li>
+			 
+			  
+			<hr class="sidebar-divider my-0">
+			<li class="nav-item">
+                <a class="nav-link" href="{!! url('admin/partners') !!}">
+                    <i class="fas fa-fw fa-image"></i>
+                    <span>Partners</span></a>
+            </li>
+			
+			
+			<!--hr class="sidebar-divider my-0">
+			<li class="nav-item">
+                <a class="nav-link" href="{!! url('admin/user') !!}">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>User List</span></a>
+            </li--> 
+            <!-- Heading    <hr class="sidebar-divider"> -->
+          <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
+                    aria-expanded="true" aria-controls="collapsePage">
+                    <i class="fas fa-fw fa-layer-group"></i>
+                    <span>Pages</span>
+                </a>
+                <div id="collapsePage" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded"> 
+                        <a class="collapse-item" href="{!! url('admin/about') !!}">About</a>
+                        <a class="collapse-item" href="{!! url('admin/faq') !!}">FAQ</a> 
+                        <a class="collapse-item" href="{!! url('admin/disclaimer') !!}">Disclaimer</a>
+                        <a class="collapse-item" href="{!! url('admin/privacy') !!}">Privacy Policy</a>
+                         <a class="collapse-item" href="{!! url('admin/terms') !!}"> Terms & Conditions</a>
+                    </div>
+                </div>
+            </li>
+ 
+			
+			<hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGeneralOptions"
+                    aria-expanded="true" aria-controls="collapseGeneralOptions">
+                    <i class="fas fa-fw fa-layer-group"></i>
+                    <span>General Options</span>
+                </a>
+                <div id="collapseGeneralOptions" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">General Options:</h6>
+						 <a class="collapse-item" href="{!! url('admin/logo') !!}">Logo</a>
+						 <a class="collapse-item" href="{!! url('admin/address') !!}">Settings</a>
+                    </div>
+                </div>
+            </li>
+			
+			<hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSEOTools"
+                    aria-expanded="true" aria-controls="collapseSEOTools">
+                    <i class="fas fa-fw fa-layer-group"></i>
+                    <span>SEO Tools</span>
+                </a>
+                <div id="collapseSEOTools" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" href="{!! url('admin/google_analytic') !!}">Google Analytics</a>
+						<a class="collapse-item" href="{!! url('admin/meta_keywords') !!}">Website Meta Keywords</a>
+						<a class="collapse-item" href="{!! url('admin/social_setting') !!}">Social settings</a>
+                    </div>
+                </div>
+            </li>
+			 
+			<hr class="sidebar-divider my-0">
+		    <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Logout</span></a>
+            </li>
+			 
+        </ul>
+		<!-- End of Sidebar -->
+		 <!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!-- Topbar -->
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+					<!-- Sidebar Toggle (Topbar) -->
+					<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
+                    <div class=" ml-auto">
+                        <a href="{!! url('/') !!}" class="btn btn-info" target="_blank">View Website</a>
+                    </div>
+					<!-- Topbar Navbar -->
+                    <ul class="navbar-nav">
+						<!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link" href="{!! url('admin/notification') !!}" >
+                                <img class="img-profile rounded-circle" src="https://image.flaticon.com/icons/png/128/3515/3515099.png">
+								<span class="badge badge-light notification">{{$admin_notification ?? '0'}}</span>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <!--div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+								 
+                                <a class="dropdown-item" href="{!! url('admin/notification') !!}">
+                                    Edit Profile
+                                </a>
+								<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{!! url('admin/notification') !!}">
+                                    Change Password
+                                </a>
+								<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{!! url('admin/notification') !!}">
+                                    Change Password
+                                </a>
+								<div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{!! url('admin/notification') !!}">
+                                    Change Password
+                                </a>
+                            </div-->
+                        
+						</li>
+					</ul>
+				  
+				  <ul class="navbar-nav">
+						<!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                <img class="img-profile rounded-circle" src="{{url('/')}}/public/uploads/admin/{{ Auth::user()->photo}}">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="{!! url('admin/adminprofile') !!}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Edit Profile
+                                </a>
+                                <a class="dropdown-item" href="{!! url('admin/adminpassword') !!}">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									{{ csrf_field() }}
+								</form>
+                            </div>
+                        </li>
+					</ul>
+				
+				</nav>
+				<div class="container-fluid">
+				@yield('content')
+				</div>
+			</div>
+		</div>
+	
+
+	<!-- /#wrapper -->
+	<script>
+		var baseUrl = '{!! url(' / ') !!}';
+ 	</script>
+   
+	<!-- jQuery -->
+	<script type="text/javascript" src="{{ URL::asset('public/assets/admin/vendor/jquery/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ URL::asset('public/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script type="text/javascript" src="{{ URL::asset('public/assets/admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ URL::asset('public/assets/admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="{{ URL::asset('public/assets/admin/js/parsley.js')}}"></script>
+    <script src="{{ URL::asset('public/assets/admin/js/sweetalert2.min.js')}}"></script>
+     <script src="{{ URL::asset('public/assets/admin/js/bootstrap-tagsinput.min.js')}}"></script>
+ 	<script src="https://cdn.tiny.cloud/1/c2qcxj5f1jt89kcmq754gz0psi44pl01zjx6zehocfgeeq4j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+   
+<script>
+         $('body').tooltip({selector: '[data-toggle="tooltip"]'});
+ 
+        
+	tinymce.init({
+	  selector: 'textarea.tinymce',
+	  plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+	  toolbar_mode: 'floating',
+   });
+
+         //on click preventDefault text options
+          $(".number").bind("keypress", function (e) {
+              var keyCode = e.which ? e.which : e.keyCode
+                   
+              if (!(keyCode >= 48 && keyCode <= 57)) {
+                $(".numbererror").css("display", "inline");
+                return false;
+              }else{
+                $(".numbererror").css("display", "none");
+              }
+          });
+            $("li").on('click', function(e){
+              //  $(this).addClass('current').siblings().removeClass('current'); 
+            });
+    </script>
+	<script>
+        function uploadclick(){
+            $("#uploadFile").click();
+            $("#uploadFile").change(function(event) {
+                $("#uploadTrigger").html($("#uploadFile").val());
+            });
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#adminimg').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+	$(document).ready(function() {
+			  setTimeout(function() {
+				 $( ".tox-notifications-container" ).remove();
+			  }, 1000);
+	  });
+ 
+ 
+        /* Encode string to slug */
+        function convertToSlug(str) {
+            document.getElementById("seoTitle").value =   str;
+            //replace all special characters | symbols with a space
+            str = str.replace(/[`~!@#$%^&*()_\-+=\[\]{};:'"\\|\/,.<>?\s]/g, ' ').toLowerCase();
+
+            // trim spaces at start and end of string
+            str = str.replace(/^\s+|\s+$/gm, '');
+
+            // replace space with dash/hyphen
+            str = str.replace(/\s+/g, '-');
+            document.getElementById("slug").value = str;
+            //return str;
+        }
+</script>
+
+  @yield('footer')
+
+</body>
+
+</html>

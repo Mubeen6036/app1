@@ -1,0 +1,399 @@
+ 
+ 
+ span.badge.badge-light.notification {
+    margin-bottom: 30px !important;
+    color: white;
+    background: black;
+} 
+  .min-container {
+		max-width: 720px;
+	}
+
+	img#adminimg ,img#adminimg1,img#adminimg2  {
+		height: 300px !important;
+		width: 300px !important;
+		padding: 10px;
+		margin-bottom: 15px;
+		border: 2px solid gray;
+	}
+ 
+ 
+
+	 .loader {
+	    text-align: center !important;
+		position: fixed;
+		z-index: 9999999;
+		margin-left: 50%;
+		margin-top: 200px;
+	}
+
+
+
+i.fa.fa-trash.delete_gallery {
+    cursor: pointer;
+    float: right;
+    margin: 10px -20px 0px 0px;
+    z-index: 999999999;
+    border: 1px solid red;
+    color: red;
+    padding: 2px;
+    font-size: smaller;
+}
+
+img.edit_img {
+    height: 150px;
+    float: right;
+    padding: 0px;
+    border: 1px solid gray;
+    width: 150px;
+    right: 5px !important;
+    margin: 4px 10px 0px 0px;
+}
+
+.form-wizard {
+  color: #888888;
+  padding: 30px;
+}
+
+ 
+.form-wizard .wizard-form-checkbox {
+  margin-left: 5px;
+  position: relative;
+} 
+.form-wizard .wizard-form-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: #dddddd;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+.form-wizard .wizard-form-checkbox input[type="checkbox"]:focus {
+  outline: 0;
+}
+.form-wizard .wizard-form-checkbox input[type="checkbox"]:checked {
+  background-color: #4e73df;
+}
+/* .form-wizard .wizard-form-checkbox input[type="checkbox"]:checked::before {
+  content: "✔";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: #ffffff;
+  left: 1px;
+  right: 0;
+  margin: 0 auto;
+  top: 8px;
+} */
+.form-wizard .wizard-form-checkbox input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  text-align:center;
+ /* webkit-animation: click-radio-wave 0.65s;
+  -moz-animation: click-radio-wave 0.65s;
+  animation: click-radio-wave 0.65s;*/
+  display: block;
+  position: relative;
+  z-index: 100;  
+}
+.form-wizard .wizard-form-checkbox input[type="checkbox"] ~ label {
+  padding-left: 10px;
+  cursor: pointer;
+}
+ 
+.form-wizard .wizard-form-radio {
+  margin-left: 5px;
+  position: relative;
+}
+.form-wizard .wizard-form-radio input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: #dddddd;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+.form-wizard .wizard-form-radio input[type="radio"]:focus {
+  outline: 0;
+}
+.form-wizard .wizard-form-radio input[type="radio"]:checked {
+  background-color: #4e73df;
+}
+.form-wizard .wizard-form-radio input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: 1px;
+  right: 0;
+  margin: 0 auto;
+  top: 8px;
+}
+.form-wizard .wizard-form-radio input[type="radio"]:checked::after {
+  content: "";
+  display: inline-block;
+ /* webkit-animation: click-radio-wave 0.65s;
+  -moz-animation: click-radio-wave 0.65s;
+  animation: click-radio-wave 0.65s;*/
+  background: #000000;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+  border-radius: 50%;
+}
+.form-wizard .wizard-form-radio input[type="radio"] ~ label {
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+
+
+
+
+.form-wizard .form-wizard-header {
+  text-align: center;
+}
+.form-wizard .form-wizard-next-btn, .form-wizard .form-wizard-previous-btn, .form-wizard .form-wizard-submit {
+  background-color: #4e73df;
+  color: #ffffff;
+  display: inline-block;
+  min-width: 100px;
+  min-width: 120px;
+  padding: 10px;
+  text-align: center;
+}
+.form-wizard .form-wizard-next-btn:hover, .form-wizard .form-wizard-next-btn:focus, .form-wizard .form-wizard-previous-btn:hover, .form-wizard .form-wizard-previous-btn:focus, .form-wizard .form-wizard-submit:hover, .form-wizard .form-wizard-submit:focus {
+  color: #ffffff;
+  opacity: 0.6;
+  text-decoration: none;
+}
+.form-wizard .wizard-fieldset {
+  display: none;
+}
+.form-wizard .wizard-fieldset.show {
+  display: block;
+}
+.form-wizard .wizard-form-error {
+  display: none;
+  background-color: #d70b0b;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.form-wizard .form-wizard-previous-btn {
+  background-color: #4e73df;
+}
+.form-wizard .form-control {
+  font-weight: 300;
+  height: auto !important;
+  padding: 15px;
+  color: #888888;
+  background-color: #f1f1f1;
+  border: none;
+}
+.form-wizard .form-control:focus {
+  box-shadow: none;
+}
+.form-wizard .form-group {
+  position: relative;
+  margin: 25px 0;
+}
+.form-wizard .wizard-form-text-label {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  transition: 0.2s linear all;
+}
+.form-wizard .focus-input .wizard-form-text-label {
+  color: #4e73df;
+  top: -18px;
+  transition: 0.2s linear all;
+  font-size: 12px;
+}
+.form-wizard .form-wizard-steps {
+  margin: 30px 0;
+}
+.form-wizard .form-wizard-steps li {
+  width: 25%;
+  float: left;
+  position: relative;
+}
+.form-wizard .form-wizard-steps li::after {
+  background-color: #f3f3f3;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.form-wizard .form-wizard-steps li span {
+  background-color: #dddddd;
+  border-radius: 50%;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  z-index: 1;
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+  width: 50%;
+}
+.form-wizard .form-wizard-steps li.active span, .form-wizard .form-wizard-steps li.activated span {
+  background-color: #4e73df;
+  color: #ffffff;
+}
+.form-wizard .form-wizard-steps li.active::after, .form-wizard .form-wizard-steps li.activated::after {
+  background-color: #4e73df;
+  left: 50%;
+  width: 50%;
+  border-color: #4e73df;
+}
+.form-wizard .form-wizard-steps li.activated::after {
+  width: 100%;
+  border-color: #4e73df;
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+  left: 0;
+}
+.form-wizard .wizard-password-eye {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+@keyframes click-radio-wave {
+  0% {
+    width: 25px;
+    height: 25px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    margin-left: -15px;
+    margin-top: -15px;
+    opacity: 0.0;
+  }
+}
+
+
+@keyframes click-checkbox-wave {
+  0% {
+    width: 25px;
+    height: 25px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    margin-left: -15px;
+    margin-top: -15px;
+    opacity: 0.0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wizard-content-left {
+    height: auto;
+  }
+}
+
+
+
+
+
+.bg-gradient {
+background: #C9D6FF;
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF); 
+background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+} 
+ 
+.pricing-divider {
+border-radius: 20px;
+background: #C64545;
+padding: 1em 0 4em;
+position: relative;
+}
+.blue .pricing-divider{
+background: #2D5772; 
+}
+.green .pricing-divider {
+background: #1AA85C; 
+}
+.red b {
+  color:#C64545
+}
+.blue b {
+  color:#2D5772
+}
+.green b {
+  color:#1AA85C
+}
+.pricing-divider-img {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 80px;
+}
+.deco-layer {
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+.btn-custom  {
+  background:#36b9cc; color:#fff; border-radius:20px
+}
+
+.img-float {
+  width:50px; position:absolute;top:-3.5rem;right:1rem
+}
+
+.princing-item {
+  transition: all 150ms ease-out;
+}
+.princing-item:hover {
+  transform: scale(1.05);
+}
+.princing-item:hover .deco-layer--1 {
+  -webkit-transform: translate3d(15px, 0, 0);
+  transform: translate3d(15px, 0, 0);
+}
+.princing-item:hover .deco-layer--2 {
+  -webkit-transform: translate3d(-15px, 0, 0);
+  transform: translate3d(-15px, 0, 0);
+}
+span.mrp_price {
+    font-size: 30px;
+}
